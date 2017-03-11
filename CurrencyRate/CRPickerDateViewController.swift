@@ -12,6 +12,7 @@ class CRPickerDateViewController: UIViewController, UIPickerViewDataSource, UIPi
     
     struct Constants {
         static let ShowRatesOnDateSegue = "showRates"
+        static let NavTitle = "Курс валют"
     }
     
     var dates = [String]()
@@ -21,7 +22,7 @@ class CRPickerDateViewController: UIViewController, UIPickerViewDataSource, UIPi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "Курс валют"
+        navigationItem.title = Constants.NavTitle
         
         datePickerView.delegate = self
         datePickerView.dataSource = self
@@ -49,7 +50,6 @@ class CRPickerDateViewController: UIViewController, UIPickerViewDataSource, UIPi
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        print(dates[row])
         performSegue(withIdentifier: Constants.ShowRatesOnDateSegue, sender: dates[row])
     }
     

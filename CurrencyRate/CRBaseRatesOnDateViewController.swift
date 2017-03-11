@@ -20,6 +20,7 @@ class CRBaseRatesOnDateViewController: UIViewController, UITableViewDataSource, 
         static let CellEstimatedHeight: CGFloat = 44
         static let HeaderCellId = "HeaderCellId"
         static let HeaderHeight: CGFloat = 26
+        static let NavTitlePart = "Курс на "
     }
     
     var currentDate: String?
@@ -43,7 +44,7 @@ class CRBaseRatesOnDateViewController: UIViewController, UITableViewDataSource, 
         tableView.estimatedRowHeight = Constants.CellEstimatedHeight
         tableView.rowHeight = UITableViewAutomaticDimension
         
-        navigationItem.title = currentDate == nil ? "" : "Курс на \(currentDate!)"
+        navigationItem.title = currentDate == nil ? "" : Constants.NavTitlePart + "\(currentDate!)"
     }
 
     override func didReceiveMemoryWarning() {

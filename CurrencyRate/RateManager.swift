@@ -53,14 +53,8 @@ class RateManager: NSObject {
         })
     }
     
-    func getDollarAndEuroRates(forDate date: String, successHandler:@escaping (_ rates: [CBRate]) -> (), failHandler:@escaping (_ error: String) -> ()) {
-        let parameters = [Constants.DateParameterKey: date]
-        
-        getRates(withParameters: parameters, successHandler: { (rates) in
-            successHandler(rates.filter({$0.id == Constants.DollarRateId || $0.id == Constants.EuroRateId}))
-        }, failHandler: { (error) in
-            failHandler(error)
-        })
+    func getDollarAndEuro(fromRates rates: [CBRate]) -> [CBRate] {
+        return rates.filter({$0.id == Constants.DollarRateId || $0.id == Constants.EuroRateId})
     }
     
 }

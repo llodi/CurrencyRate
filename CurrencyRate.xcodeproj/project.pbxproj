@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		530C557B1E732ED300D49721 /* CBRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530C557A1E732ED300D49721 /* CBRate.swift */; };
+		531578F31E746E96008139C7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531578F21E746E96008139C7 /* SettingsViewController.swift */; };
+		531578F51E746FED008139C7 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531578F41E746FED008139C7 /* SettingsManager.swift */; };
 		533C0FA41E741AFA00FA65BB /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533C0FA31E741AFA00FA65BB /* DateHelper.swift */; };
 		5364DADA1E72F10200F599CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5364DAD91E72F10200F599CE /* AppDelegate.swift */; };
 		5364DADC1E72F10200F599CE /* CRPickerDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5364DADB1E72F10200F599CE /* CRPickerDateViewController.swift */; };
@@ -26,6 +28,8 @@
 		32B7B346F2C693718403ECAF /* Pods-CurrencyRate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyRate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CurrencyRate/Pods-CurrencyRate.debug.xcconfig"; sourceTree = "<group>"; };
 		5000B7A26BFF5B562D536586 /* Pods-CurrencyRate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyRate.release.xcconfig"; path = "Pods/Target Support Files/Pods-CurrencyRate/Pods-CurrencyRate.release.xcconfig"; sourceTree = "<group>"; };
 		530C557A1E732ED300D49721 /* CBRate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBRate.swift; sourceTree = "<group>"; };
+		531578F21E746E96008139C7 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		531578F41E746FED008139C7 /* SettingsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
 		533C0FA31E741AFA00FA65BB /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		5364DAD61E72F10200F599CE /* CurrencyRate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyRate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5364DAD91E72F10200F599CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +71,7 @@
 			children = (
 				5364DAF01E72F9C000F599CE /* RateManager.swift */,
 				533C0FA31E741AFA00FA65BB /* DateHelper.swift */,
+				531578F41E746FED008139C7 /* SettingsManager.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -77,6 +82,7 @@
 				533C0FA21E741A5100FA65BB /* Base */,
 				5364DADB1E72F10200F599CE /* CRPickerDateViewController.swift */,
 				538F9D751E73FAFD0090F652 /* CBRatesController.swift */,
+				531578F21E746E96008139C7 /* SettingsViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -284,11 +290,13 @@
 				5364DADC1E72F10200F599CE /* CRPickerDateViewController.swift in Sources */,
 				5364DADA1E72F10200F599CE /* AppDelegate.swift in Sources */,
 				538F9D761E73FAFD0090F652 /* CBRatesController.swift in Sources */,
+				531578F31E746E96008139C7 /* SettingsViewController.swift in Sources */,
 				5364DAEC1E72F1A700F599CE /* AppConstants.swift in Sources */,
 				5364DAF11E72F9C000F599CE /* RateManager.swift in Sources */,
 				538F9D741E73F8350090F652 /* BaseRateCell.swift in Sources */,
 				533C0FA41E741AFA00FA65BB /* DateHelper.swift in Sources */,
 				530C557B1E732ED300D49721 /* CBRate.swift in Sources */,
+				531578F51E746FED008139C7 /* SettingsManager.swift in Sources */,
 				538F9D721E73C0080090F652 /* CRBaseRatesOnDateViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

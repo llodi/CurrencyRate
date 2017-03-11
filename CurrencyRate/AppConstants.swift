@@ -11,4 +11,5 @@ import Foundation
 
 struct AppConstants {
     static let CRServerUrl = "https://www.cbr.ru/scripts/XML_daily.asp"
+    static let CRUserDefaultsShowAllRates = "CRUserDefaultsShowAllRates"
 }

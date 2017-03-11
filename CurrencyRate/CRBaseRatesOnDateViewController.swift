@@ -15,6 +15,7 @@ protocol CRModelUpdater {
 class CRBaseRatesOnDateViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     struct Constants {
+        static let ShowSettingsSegue = "ShowSettings"
         static let BaseRateCellId = "BaseRateCellId"
         static let CellEstimatedHeight: CGFloat = 44
         static let HeaderCellId = "HeaderCellId"
@@ -86,5 +87,4 @@ class CRBaseRatesOnDateViewController: UIViewController, UITableViewDataSource, 
         
         return nil
     }
-
 }

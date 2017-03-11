@@ -46,7 +46,14 @@
                             <constraint firstAttribute="trailing" secondItem="bKZ-Nd-JS7" secondAttribute="trailing" id="yDG-Nm-h6z"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ViO-Pc-8JJ"/>
+                    <navigationItem key="navigationItem" id="ViO-Pc-8JJ">
+                        <barButtonItem key="leftBarButtonItem" image="settings" id="Tjb-k9-nbq">
+                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="DLC-X3-6yD" kind="show" identifier="ShowSettings" id="pZg-jK-pad"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="datePickerView" destination="bKZ-Nd-JS7" id="rrA-MS-uB1"/>
                         <segue destination="ebp-d8-ovd" kind="show" identifier="showRates" id="5Xt-bj-YeJ"/>
@@ -55,6 +62,64 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="948" y="35.532233883058474"/>
+        </scene>
+        <!--Настройки-->
+        <scene sceneID="ZoK-On-Rhz">
+            <objects>
+                <tableViewController title="Настройки" id="DLC-X3-6yD" customClass="SettingsViewController" customModule="CurrencyRate" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="OOC-ZH-6tU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection headerTitle="Показывать курсы" id="zwH-3p-4wI">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="57" id="zSa-kR-lPP">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="57"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zSa-kR-lPP" id="UOf-vu-3NH">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Доллары/Евро - Все курсы" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZeU-RU-cZw">
+                                                    <rect key="frame" x="8" y="8" width="302" height="40"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fQd-8O-rDF">
+                                                    <rect key="frame" x="318" y="13" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="swithAllRatesAction:" destination="DLC-X3-6yD" eventType="valueChanged" id="BX1-YS-OS6"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="topMargin" secondItem="ZeU-RU-cZw" secondAttribute="top" id="6jm-j2-I4p"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="ZeU-RU-cZw" secondAttribute="leading" id="FWP-wn-sDQ"/>
+                                                <constraint firstItem="fQd-8O-rDF" firstAttribute="top" secondItem="UOf-vu-3NH" secondAttribute="topMargin" constant="5" id="Fo1-75-ic8"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="fQd-8O-rDF" secondAttribute="bottom" constant="4" id="Rim-D1-8fw"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="fQd-8O-rDF" secondAttribute="trailing" id="ZzB-gs-Hvr"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ZeU-RU-cZw" secondAttribute="bottom" id="n9M-kV-L1B"/>
+                                                <constraint firstItem="fQd-8O-rDF" firstAttribute="leading" secondItem="ZeU-RU-cZw" secondAttribute="trailing" constant="8" id="ry4-Rv-sN7"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="DLC-X3-6yD" id="hut-mQ-i9p"/>
+                            <outlet property="delegate" destination="DLC-X3-6yD" id="Ius-Um-nx1"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="allRatesOutlet" destination="fQd-8O-rDF" id="88t-Nt-0fn"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jSa-gJ-B5l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="948" y="751.57421289355329"/>
         </scene>
         <!--Rates Controller-->
         <scene sceneID="qHR-iq-dKK">
@@ -255,5 +320,6 @@
     <resources>
         <image name="dollar" width="1052" height="1736"/>
         <image name="rub" width="1118" height="1494"/>
+        <image name="settings" width="25" height="25"/>
     </resources>
 </document>

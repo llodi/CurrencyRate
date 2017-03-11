@@ -21,6 +21,8 @@ class CRPickerDateViewController: UIViewController, UIPickerViewDataSource, UIPi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.title = "Курс валют"
+        
         datePickerView.delegate = self
         datePickerView.dataSource = self
         

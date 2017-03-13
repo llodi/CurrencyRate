@@ -11,7 +11,7 @@ import Alamofire
 import SWXMLHash
 
 
-class RateManager: NSObject {
+class CBRateManager: NSObject {
     
     struct Constants {
         static let DateParameterKey = "date_req"
@@ -23,7 +23,7 @@ class RateManager: NSObject {
         super.init()
     }
     
-    static let shared = RateManager()
+    static let shared = CBRateManager()
     
     private func getRates(withParameters parameters: [String: String], successHandler:@escaping (_ rates: [CBRate]) -> (), failHandler:@escaping (_ error: String) -> ()) {
         

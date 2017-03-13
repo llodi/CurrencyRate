@@ -32,6 +32,10 @@
                             </view>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bKZ-Nd-JS7">
                                 <rect key="frame" x="0.0" y="80" width="375" height="507"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="cwa-Li-wX8" appends="YES" id="9jZ-CB-4Gx"/>
+                                </connections>
                             </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -56,10 +60,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="datePickerView" destination="bKZ-Nd-JS7" id="rrA-MS-uB1"/>
+                        <outlet property="tapGestureOutlet" destination="cwa-Li-wX8" id="GwR-IO-Iga"/>
                         <segue destination="ebp-d8-ovd" kind="show" identifier="showRates" id="5Xt-bj-YeJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="cwa-Li-wX8"/>
             </objects>
             <point key="canvasLocation" x="948" y="35.532233883058474"/>
         </scene>
@@ -78,7 +84,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="57"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zSa-kR-lPP" id="UOf-vu-3NH">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="57"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Доллары/Евро - Все курсы" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZeU-RU-cZw">

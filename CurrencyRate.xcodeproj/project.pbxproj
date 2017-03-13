@@ -17,7 +17,7 @@
 		5364DAE11E72F10200F599CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5364DAE01E72F10200F599CE /* Assets.xcassets */; };
 		5364DAE41E72F10200F599CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5364DAE21E72F10200F599CE /* LaunchScreen.storyboard */; };
 		5364DAEC1E72F1A700F599CE /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5364DAEB1E72F1A700F599CE /* AppConstants.swift */; };
-		5364DAF11E72F9C000F599CE /* RateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5364DAF01E72F9C000F599CE /* RateManager.swift */; };
+		5364DAF11E72F9C000F599CE /* CBRateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5364DAF01E72F9C000F599CE /* CBRateManager.swift */; };
 		538F9D721E73C0080090F652 /* CRBaseRatesOnDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538F9D711E73C0080090F652 /* CRBaseRatesOnDateViewController.swift */; };
 		538F9D741E73F8350090F652 /* BaseRateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538F9D731E73F8350090F652 /* BaseRateCell.swift */; };
 		538F9D761E73FAFD0090F652 /* CBRatesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538F9D751E73FAFD0090F652 /* CBRatesController.swift */; };
@@ -39,7 +39,7 @@
 		5364DAE31E72F10200F599CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5364DAE51E72F10200F599CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5364DAEB1E72F1A700F599CE /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
-		5364DAF01E72F9C000F599CE /* RateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateManager.swift; sourceTree = "<group>"; };
+		5364DAF01E72F9C000F599CE /* CBRateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBRateManager.swift; sourceTree = "<group>"; };
 		538F9D711E73C0080090F652 /* CRBaseRatesOnDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRBaseRatesOnDateViewController.swift; sourceTree = "<group>"; };
 		538F9D731E73F8350090F652 /* BaseRateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRateCell.swift; sourceTree = "<group>"; };
 		538F9D751E73FAFD0090F652 /* CBRatesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBRatesController.swift; sourceTree = "<group>"; };
@@ -69,7 +69,7 @@
 		533C0F9F1E741A1400FA65BB /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				5364DAF01E72F9C000F599CE /* RateManager.swift */,
+				5364DAF01E72F9C000F599CE /* CBRateManager.swift */,
 				533C0FA31E741AFA00FA65BB /* DateHelper.swift */,
 				531578F41E746FED008139C7 /* SettingsManager.swift */,
 			);
@@ -292,7 +292,7 @@
 				538F9D761E73FAFD0090F652 /* CBRatesController.swift in Sources */,
 				531578F31E746E96008139C7 /* SettingsViewController.swift in Sources */,
 				5364DAEC1E72F1A700F599CE /* AppConstants.swift in Sources */,
-				5364DAF11E72F9C000F599CE /* RateManager.swift in Sources */,
+				5364DAF11E72F9C000F599CE /* CBRateManager.swift in Sources */,
 				538F9D741E73F8350090F652 /* BaseRateCell.swift in Sources */,
 				533C0FA41E741AFA00FA65BB /* DateHelper.swift in Sources */,
 				530C557B1E732ED300D49721 /* CBRate.swift in Sources */,

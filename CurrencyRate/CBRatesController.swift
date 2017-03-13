@@ -25,12 +25,12 @@ class CBRatesController: CRBaseRatesOnDateViewController, CRModelUpdater {
     
     func getRates(byDate date: String) {
         
-        RateManager.shared.getRates(forDate: date, successHandler: { [weak weakSelf = self] (rates) in
+        CBRateManager.shared.getRates(forDate: date, successHandler: { [weak weakSelf = self] (rates) in
             
             if weakSelf?.showAllRates ?? false {
                 weakSelf?.rates = rates
             } else {
-                weakSelf?.rates = RateManager.shared.getDollarAndEuro(fromRates: rates)
+                weakSelf?.rates = CBRateManager.shared.getDollarAndEuro(fromRates: rates)
             }
             
             DispatchQueue.main.async {

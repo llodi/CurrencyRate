@@ -73,13 +73,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CurrencyRate/CRPickerDateViewController.swift"
-            timestampString = "510948395.825971"
+            filePath = "CurrencyRate/CRBaseRatesOnDateViewController.swift"
+            timestampString = "510949825.285005"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "prepare(for:sender:)"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "tableView(_:viewForHeaderInSection:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -89,13 +89,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CurrencyRate/CRBaseRatesOnDateViewController.swift"
-            timestampString = "510949825.285005"
+            filePath = "CurrencyRate/CRPickerDateViewController.swift"
+            timestampString = "511115248.95894"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
-            landmarkName = "tableView(_:viewForHeaderInSection:)"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "tappedToSelectRow(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -8,16 +8,21 @@
 
 import UIKit
 
-class CRPickerDateViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class CRPickerDateViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UIGestureRecognizerDelegate {
     
     struct Constants {
         static let ShowRatesOnDateSegue = "showRates"
         static let NavTitle = "Курс валют"
     }
     
-    var dates = [String]()
+    var dates = [String]() {
+        didSet {
+            datePickerView.reloadAllComponents()
+        }
+    }
     
     @IBOutlet weak var datePickerView: UIPickerView!
+    @IBOutlet var tapGestureOutlet: UITapGestureRecognizer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,11 +32,30 @@ class CRPickerDateViewController: UIViewController, UIPickerViewDataSource, UIPi
         datePickerView.delegate = self
         datePickerView.dataSource = self
         
-        if let dts = DateHelper.getDates() {
-            dates = dts
-        }
+        tapGestureOutlet.delegate = self
+        tapGestureOutlet.addTarget(self, action: #selector(tappedToSelectRow(_:)))
+        
+        dates.append(dateForamtter.string(from: Date()))
+        
     }
     
+    // MARK: Actions
+    
+    func tappedToSelectRow(_ recognizer: UITapGestureRecognizer) {
+        
+        if recognizer.state == .ended {
+            let rowHeight = datePickerView.rowSize(forComponent: 0).height
+            
+            let selectedRowFrame = datePickerView.bounds.insetBy(dx: 0, dy: (datePickerView.frame.height - rowHeight) / 2)
+            
+            let userTappedOnSelectedRow = selectedRowFrame.contains(recognizer.location(in: datePickerView))
+            
+            if userTappedOnSelectedRow {
+                let selectedRow = datePickerView.selectedRow(inComponent: 0)
+                performSegue(withIdentifier: Constants.ShowRatesOnDateSegue, sender: dates[selectedRow])
+            }
+        }
+    }
     
     // MARK: UIPickerViewDataSource
     
@@ -50,7 +74,17 @@ class CRPickerDateViewController: UIViewController, UIPickerViewDataSource, UIPi
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        performSegue(withIdentifier: Constants.ShowRatesOnDateSegue, sender: dates[row])
+        
+        //if dates.count == row + 1  {
+            dates = DateHelper.getDates(for: dates)
+        //}
+        //performSegue(withIdentifier: Constants.ShowRatesOnDateSegue, sender: dates[row])
+    }
+
+    // MARK: UIGestureRecognizerDelegate
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
     
     // MARK: Navigation

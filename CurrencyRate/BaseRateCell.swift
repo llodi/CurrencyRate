@@ -29,10 +29,7 @@ class BaseRateCell: UITableViewCell {
         codeLabel.text = rt.countryCode
         nominalLabel.text = "\(rt.nominal)"
         nameLabel.text = rt.name
-        
-        let numFormatter = NumberFormatter()
-        numFormatter.maximumFractionDigits = 2
-        
+
         valueLabel.text = String(format: "%.2f", rt.value)
     }
     

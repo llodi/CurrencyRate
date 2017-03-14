@@ -25,33 +25,30 @@ class DateHelper {
         guard let endDateNSDate = calendar.date(from: endDate) else { return nil }
         
         while date >= endDateNSDate {
-            dates.append(dateForamtter.string(from: date))
+            dates.append(date.shortDateToString)
             date = calendar.date(byAdding: .day, value: -1, to: date)!
         }
         
         return dates
     }
     
-    class func getDates(for dts: [String]) -> [String] {
+    class func getDates(for dates: [String]) -> [String] {
         
-        var dates = dts
+        var dts = dates
         
-        guard let lastDateStr = dates.last else { return dates }
+        guard let lastDateStr = dates.last else { return dts }
+        guard let lastDate = lastDateStr.shortDateFromString else { return dts }
         
-        guard let lastDate = dateForamtter.date(from: lastDateStr) else { return dates }
         let calendar = Calendar.current
         
         let date = calendar.startOfDay(for: lastDate)
         
-        dates.append(dateForamtter.string(from: calendar.date(byAdding: .day, value: -1, to: date)!))
+        if let dt = calendar.date(byAdding: .day, value: -1, to: date) {
+            dts.append(dt.shortDateToString)
+        }
         
-        return dates
+        return dts
     }
     
 }
 
-let dateForamtter: DateFormatter = {
-    let fmt = DateFormatter()
-    fmt.dateFormat = "dd/MM/yyyy"
-    return fmt
-}()

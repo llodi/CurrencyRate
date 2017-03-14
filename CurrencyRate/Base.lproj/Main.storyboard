@@ -22,12 +22,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dollar" translatesAutoresizingMaskIntoConstraints="NO" id="ScN-5B-jku">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dollar" translatesAutoresizingMaskIntoConstraints="NO" id="ScN-5B-jku">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZzK-Ne-rr3">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZzK-Ne-rr3">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="0.82890089897260277" colorSpace="calibratedWhite"/>
                             </view>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bKZ-Nd-JS7">
@@ -43,9 +42,13 @@
                             <constraint firstItem="bKZ-Nd-JS7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1Iw-8E-bo0"/>
                             <constraint firstItem="ScN-5B-jku" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="33R-uD-4Vl"/>
                             <constraint firstItem="ScN-5B-jku" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="45c-u0-rKW"/>
+                            <constraint firstItem="ZzK-Ne-rr3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="4jd-Hm-SQG"/>
+                            <constraint firstItem="ZzK-Ne-rr3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="8EF-GY-BUx"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ScN-5B-jku" secondAttribute="bottom" id="ChA-lS-Zfc"/>
+                            <constraint firstAttribute="trailing" secondItem="ZzK-Ne-rr3" secondAttribute="trailing" id="EuG-Gh-jSe"/>
                             <constraint firstItem="bKZ-Nd-JS7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="G4v-hp-grj"/>
                             <constraint firstItem="bKZ-Nd-JS7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="PLe-2A-Vlu"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ZzK-Ne-rr3" secondAttribute="bottom" id="gxh-eU-rDV"/>
                             <constraint firstAttribute="trailing" secondItem="ScN-5B-jku" secondAttribute="trailing" id="jxi-Bu-p4Y"/>
                             <constraint firstAttribute="trailing" secondItem="bKZ-Nd-JS7" secondAttribute="trailing" id="yDG-Nm-h6z"/>
                         </constraints>
@@ -84,7 +87,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="57"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zSa-kR-lPP" id="UOf-vu-3NH">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="57"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Доллары/Евро - Все курсы" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZeU-RU-cZw">

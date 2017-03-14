@@ -35,8 +35,7 @@ class CRPickerDateViewController: UIViewController, UIPickerViewDataSource, UIPi
         tapGestureOutlet.delegate = self
         tapGestureOutlet.addTarget(self, action: #selector(tappedToSelectRow(_:)))
         
-        dates.append(dateForamtter.string(from: Date()))
-        
+        dates.append(Date().shortDateToString)
     }
     
     // MARK: Actions
@@ -70,15 +69,11 @@ class CRPickerDateViewController: UIViewController, UIPickerViewDataSource, UIPi
     // MARK: UIPickerViewDelegate
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-       return dates[row]
+        return dates[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
-        //if dates.count == row + 1  {
-            dates = DateHelper.getDates(for: dates)
-        //}
-        //performSegue(withIdentifier: Constants.ShowRatesOnDateSegue, sender: dates[row])
+        dates = DateHelper.getDates(for: dates)
     }
 
     // MARK: UIGestureRecognizerDelegate

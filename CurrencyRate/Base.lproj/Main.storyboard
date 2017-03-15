@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Picker Date View Controller-->
+        <!--Choosing Date Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="CRPickerDateViewController" customModule="CurrencyRate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="CRChoosingDateController" customModule="CurrencyRate" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -27,30 +27,56 @@
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZzK-Ne-rr3">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="r3o-Cz-DCK">
+                                        <rect key="frame" x="0.0" y="201" width="375" height="200"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="nDW-fB-206"/>
+                                        </constraints>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DateCellId" textLabel="Xwc-L8-SSj" style="IBUITableViewCellStyleDefault" id="QHF-DG-GGy">
+                                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QHF-DG-GGy" id="yfb-9T-3b3">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Xwc-L8-SSj">
+                                                            <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </tableViewCellContentView>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <connections>
+                                                    <segue destination="ebp-d8-ovd" kind="show" identifier="showRates" id="ZIm-G3-oJB"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="0.82890089897260277" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="r3o-Cz-DCK" firstAttribute="centerY" secondItem="ZzK-Ne-rr3" secondAttribute="centerY" id="bRj-Bc-V9f"/>
+                                    <constraint firstAttribute="trailing" secondItem="r3o-Cz-DCK" secondAttribute="trailing" id="iZF-hT-HdM"/>
+                                    <constraint firstItem="r3o-Cz-DCK" firstAttribute="leading" secondItem="ZzK-Ne-rr3" secondAttribute="leading" id="sCz-Xb-LXM"/>
+                                </constraints>
                             </view>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bKZ-Nd-JS7">
-                                <rect key="frame" x="0.0" y="80" width="375" height="507"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="cwa-Li-wX8" appends="YES" id="9jZ-CB-4Gx"/>
-                                </connections>
-                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="bKZ-Nd-JS7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1Iw-8E-bo0"/>
                             <constraint firstItem="ScN-5B-jku" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="33R-uD-4Vl"/>
                             <constraint firstItem="ScN-5B-jku" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="45c-u0-rKW"/>
                             <constraint firstItem="ZzK-Ne-rr3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="4jd-Hm-SQG"/>
                             <constraint firstItem="ZzK-Ne-rr3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="8EF-GY-BUx"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ScN-5B-jku" secondAttribute="bottom" id="ChA-lS-Zfc"/>
                             <constraint firstAttribute="trailing" secondItem="ZzK-Ne-rr3" secondAttribute="trailing" id="EuG-Gh-jSe"/>
-                            <constraint firstItem="bKZ-Nd-JS7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="G4v-hp-grj"/>
-                            <constraint firstItem="bKZ-Nd-JS7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="PLe-2A-Vlu"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ZzK-Ne-rr3" secondAttribute="bottom" id="gxh-eU-rDV"/>
                             <constraint firstAttribute="trailing" secondItem="ScN-5B-jku" secondAttribute="trailing" id="jxi-Bu-p4Y"/>
-                            <constraint firstAttribute="trailing" secondItem="bKZ-Nd-JS7" secondAttribute="trailing" id="yDG-Nm-h6z"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ViO-Pc-8JJ">
@@ -62,13 +88,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="datePickerView" destination="bKZ-Nd-JS7" id="rrA-MS-uB1"/>
-                        <outlet property="tapGestureOutlet" destination="cwa-Li-wX8" id="GwR-IO-Iga"/>
-                        <segue destination="ebp-d8-ovd" kind="show" identifier="showRates" id="5Xt-bj-YeJ"/>
+                        <outlet property="tableView" destination="r3o-Cz-DCK" id="o3M-2r-hm8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="cwa-Li-wX8"/>
             </objects>
             <point key="canvasLocation" x="948" y="35.532233883058474"/>
         </scene>
@@ -87,7 +110,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="57"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zSa-kR-lPP" id="UOf-vu-3NH">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="57"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Доллары/Евро - Все курсы" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZeU-RU-cZw">

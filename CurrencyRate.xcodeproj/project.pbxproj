@@ -12,7 +12,6 @@
 		531578F51E746FED008139C7 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531578F41E746FED008139C7 /* SettingsManager.swift */; };
 		533C0FA41E741AFA00FA65BB /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533C0FA31E741AFA00FA65BB /* DateHelper.swift */; };
 		5364DADA1E72F10200F599CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5364DAD91E72F10200F599CE /* AppDelegate.swift */; };
-		5364DADC1E72F10200F599CE /* CRPickerDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5364DADB1E72F10200F599CE /* CRPickerDateViewController.swift */; };
 		5364DADF1E72F10200F599CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5364DADD1E72F10200F599CE /* Main.storyboard */; };
 		5364DAE11E72F10200F599CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5364DAE01E72F10200F599CE /* Assets.xcassets */; };
 		5364DAE41E72F10200F599CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5364DAE21E72F10200F599CE /* LaunchScreen.storyboard */; };
@@ -21,6 +20,7 @@
 		538F9D721E73C0080090F652 /* CRBaseRatesOnDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538F9D711E73C0080090F652 /* CRBaseRatesOnDateViewController.swift */; };
 		538F9D741E73F8350090F652 /* BaseRateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538F9D731E73F8350090F652 /* BaseRateCell.swift */; };
 		538F9D761E73FAFD0090F652 /* CBRatesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538F9D751E73FAFD0090F652 /* CBRatesController.swift */; };
+		539C17921E7991F7001E3200 /* CRChoosingDateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539C17911E7991F7001E3200 /* CRChoosingDateController.swift */; };
 		53B8A22D1E77AF3B0080FFE0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B8A22C1E77AF3B0080FFE0 /* Extensions.swift */; };
 		DF5903054685D196861FA2F4 /* Pods_CurrencyRate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAE7896ECB8D2A73862E7E07 /* Pods_CurrencyRate.framework */; };
 /* End PBXBuildFile section */
@@ -34,7 +34,6 @@
 		533C0FA31E741AFA00FA65BB /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		5364DAD61E72F10200F599CE /* CurrencyRate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyRate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5364DAD91E72F10200F599CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5364DADB1E72F10200F599CE /* CRPickerDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRPickerDateViewController.swift; sourceTree = "<group>"; };
 		5364DADE1E72F10200F599CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5364DAE01E72F10200F599CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5364DAE31E72F10200F599CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -44,6 +43,7 @@
 		538F9D711E73C0080090F652 /* CRBaseRatesOnDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRBaseRatesOnDateViewController.swift; sourceTree = "<group>"; };
 		538F9D731E73F8350090F652 /* BaseRateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRateCell.swift; sourceTree = "<group>"; };
 		538F9D751E73FAFD0090F652 /* CBRatesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBRatesController.swift; sourceTree = "<group>"; };
+		539C17911E7991F7001E3200 /* CRChoosingDateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRChoosingDateController.swift; sourceTree = "<group>"; };
 		53B8A22C1E77AF3B0080FFE0 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		CAE7896ECB8D2A73862E7E07 /* Pods_CurrencyRate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CurrencyRate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -82,7 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				533C0FA21E741A5100FA65BB /* Base */,
-				5364DADB1E72F10200F599CE /* CRPickerDateViewController.swift */,
+				539C17911E7991F7001E3200 /* CRChoosingDateController.swift */,
 				538F9D751E73FAFD0090F652 /* CBRatesController.swift */,
 				531578F21E746E96008139C7 /* SettingsViewController.swift */,
 			);
@@ -298,13 +298,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5364DADC1E72F10200F599CE /* CRPickerDateViewController.swift in Sources */,
 				5364DADA1E72F10200F599CE /* AppDelegate.swift in Sources */,
 				538F9D761E73FAFD0090F652 /* CBRatesController.swift in Sources */,
 				531578F31E746E96008139C7 /* SettingsViewController.swift in Sources */,
 				5364DAEC1E72F1A700F599CE /* AppConstants.swift in Sources */,
 				5364DAF11E72F9C000F599CE /* CBRateManager.swift in Sources */,
 				538F9D741E73F8350090F652 /* BaseRateCell.swift in Sources */,
+				539C17921E7991F7001E3200 /* CRChoosingDateController.swift in Sources */,
 				53B8A22D1E77AF3B0080FFE0 /* Extensions.swift in Sources */,
 				533C0FA41E741AFA00FA65BB /* DateHelper.swift in Sources */,
 				530C557B1E732ED300D49721 /* CBRate.swift in Sources */,

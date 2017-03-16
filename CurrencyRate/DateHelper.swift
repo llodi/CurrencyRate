@@ -32,6 +32,18 @@ class DateHelper {
         return dates
     }
     
+    class func getDatesToBackwarDirection(for dates: [String], forCount count: Int) -> [String] {
+        var dts = dates
+        
+        var i = 1
+        
+        while i <= count {
+            dts = getDatesByOneToBackwarDirection(for: dts)
+            i += 1
+        }
+        return dts
+    }
+
     class func getDatesByOneToBackwarDirection(for dates: [String]) -> [String] {
         
         var dts = dates
@@ -48,45 +60,6 @@ class DateHelper {
         }
         
         return dts
-    }
-    
-    class func getDatesByOneToForwardDirection(for dates: [String]) -> [String] {
-        
-        var dts = dates
-        
-        guard let firstDateStr = dates.first else { return dts }
-        guard let firstDate = firstDateStr.shortDateFromString else { return dts }
-        
-        if firstDate.shortDate == Date().shortDate { return dts}
-        
-        let calendar = Calendar.current
-        
-        let date = calendar.startOfDay(for: firstDate)
-        
-        if let dt = calendar.date(byAdding: .day, value: 1, to: date) {
-            dts.insert(dt.shortDateToString, at: 0)
-        }
-        
-        return dts
-    }
-    
-    
-    class func initFromFirstDate(datesArray dates: [String]) -> [String] {
-        
-        guard let first = dates.first else { return dates }
-        if first == Date().shortDateToString { return dates}
-        
-        var dts = [String]()
-        dts.insert(first, at: 0)
-        return dts
-    }
-    
-    class func initFromLastDate(datesArray dates: [String]) -> [String] {
-        guard let last = dates.last else { return dates }
-        var dts = [String]()
-        dts.append(last)
-        return dts
-        
     }
 }
 

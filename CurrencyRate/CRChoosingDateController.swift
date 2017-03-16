@@ -14,6 +14,8 @@ class CRChoosingDateController: UIViewController, UITableViewDataSource, UITable
         static let DateCellId = "DateCellId"
         static let ShowRatesOnDateSegue = "showRates"
         static let NavTitle = "Курс валют"
+        static let AddMoreAmount = 14
+        static let AdjustDistanceFromBottomConst:CGFloat = 10.0
     }
     
     var dates = [String]() {
@@ -34,6 +36,7 @@ class CRChoosingDateController: UIViewController, UITableViewDataSource, UITable
         tableView.dataSource = self
         
         dates.append(Date().shortDateToString)
+        dates = DateHelper.getDatesToBackwarDirection(for: dates, forCount: Constants.AddMoreAmount)
     }
    
     
@@ -57,6 +60,12 @@ class CRChoosingDateController: UIViewController, UITableViewDataSource, UITable
         return UITableViewCell()
     }
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        if indexPath.item + 1 == dates.count {
+//            dates = DateHelper.getDatesToBackwarDirection(for: dates, forCount: 13)
+//        }
+    }
+    
     // MARK: - UIScrollViewDelegate
 
     var lastContentOffset: CGPoint = CGPoint.zero
@@ -72,38 +81,15 @@ class CRChoosingDateController: UIViewController, UITableViewDataSource, UITable
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
-        let visible = tableView.visibleCells
-        if visible.count == 0 { return }
+        let currentOffset = scrollView.contentOffset.y;
+        let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height;
         
-        if lastContentOffset.y < scrollView.contentOffset.y {
-            //print("Scrolled Down")
-            updateDataSource(withAmountCells: visible.count, withDirection: .down)
+        // Change 10.0 to adjust the distance from bottom
+        if maximumOffset - currentOffset <= Constants.AdjustDistanceFromBottomConst {
+            dates = DateHelper.getDatesToBackwarDirection(for: dates, forCount: Constants.AddMoreAmount)
         }
-        else if lastContentOffset.y > scrollView.contentOffset.y {
-            //print("Scrolled Up")
-            updateDataSource(withAmountCells: visible.count, withDirection: .up)
-        }
-
     }
     
-    private func updateDataSource(withAmountCells amount: Int, withDirection direction: Direction) {
-        if dates.count <= amount {
-            switch direction {
-            case .up:
-                dates = DateHelper.getDatesByOneToForwardDirection(for: dates)
-            case .down:
-                dates = DateHelper.getDatesByOneToBackwarDirection(for: dates)
-            }
-        } else if dates.count > amount {
-            switch direction {
-            case .up:
-                dates = DateHelper.initFromFirstDate(datesArray: dates)
-            case .down:
-                dates = DateHelper.initFromLastDate(datesArray: dates)
-            }
-            
-        }
-    }
     
     // MARK: - Navigation
     

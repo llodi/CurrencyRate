@@ -59,11 +59,51 @@ class CRChoosingDateController: UIViewController, UITableViewDataSource, UITable
     
     // MARK: - UIScrollViewDelegate
 
+    var lastContentOffset: CGPoint = CGPoint.zero
+    enum Direction {
+        case up
+        case down
+    }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        dates = DateHelper.getDates(for: dates)
+        lastContentOffset = scrollView.contentOffset
     }
+    
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        let visible = tableView.visibleCells
+        if visible.count == 0 { return }
+        
+        if lastContentOffset.y < scrollView.contentOffset.y {
+            //print("Scrolled Down")
+            updateDataSource(withAmountCells: visible.count, withDirection: .down)
+        }
+        else if lastContentOffset.y > scrollView.contentOffset.y {
+            //print("Scrolled Up")
+            updateDataSource(withAmountCells: visible.count, withDirection: .up)
+        }
 
+    }
+    
+    private func updateDataSource(withAmountCells amount: Int, withDirection direction: Direction) {
+        if dates.count <= amount {
+            switch direction {
+            case .up:
+                dates = DateHelper.getDatesByOneToForwardDirection(for: dates)
+            case .down:
+                dates = DateHelper.getDatesByOneToBackwarDirection(for: dates)
+            }
+        } else if dates.count > amount {
+            switch direction {
+            case .up:
+                dates = DateHelper.initFromFirstDate(datesArray: dates)
+            case .down:
+                dates = DateHelper.initFromLastDate(datesArray: dates)
+            }
+            
+        }
+    }
     
     // MARK: - Navigation
     

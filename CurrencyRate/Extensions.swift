@@ -13,7 +13,12 @@ extension Date {
     var shortDateToString: String {
         return dateForamtter.string(from: self)
     }
+    
+    var shortDate: Date? {
+        return dateForamtter.date(from: self.shortDateToString)
+    }
 }
+
 
 extension String {
     var shortDateFromString: Date? {
